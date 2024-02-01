@@ -9,17 +9,17 @@ provider "aws" {
 EOF
 }
 
-remote_state {
-  backend = "s3"
-  config = {
-    encrypt        = true
-    bucket         = "digger-s3backend-test-terragrunt-racecondition"
+generate "backend" {
+  path      = "backend.tf"
+  if_exists = "overwrite_terragrunt"
+  contents = <<EOF
+terraform {
+  backend "s3" {
+    bucket         = "digger-demo-terragrunt-parallel"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-locks"
+    encrypt        = true
   }
-  generate = {
-    path      = "backend.tf"
-    if_exists = "overwrite_terragrunt"
-  }
+}
+EOF
 }
