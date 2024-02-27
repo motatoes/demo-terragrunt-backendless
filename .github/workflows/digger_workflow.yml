@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@latest
+        uses: diggerhq/digger@fix/terragrunt-version
         with:
           setup-aws: true
           setup-terragrunt: true
