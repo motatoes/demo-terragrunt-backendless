@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket         = "digger-demo-terragrunt-parallel-2"
-    key            = "app-b/terraform.tfstate"
+    key            = "app-dev/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
   }
