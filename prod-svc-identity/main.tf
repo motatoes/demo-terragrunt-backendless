@@ -1,6 +1,6 @@
 module "iam_role" {
   source    = "../modules/iam_role"
-  role_name = "s3_bucket_role_identity"
+  role_name = "s3_bucket_role_identity_prod"
 }
 
 module "s3_bucket" {
