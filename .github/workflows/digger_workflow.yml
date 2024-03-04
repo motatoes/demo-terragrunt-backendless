@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger-ee@v0.4.6
+        uses: diggerhq/digger-ee@vee-drift-as-issues
         with:
           setup-aws: true
           setup-terragrunt: true
